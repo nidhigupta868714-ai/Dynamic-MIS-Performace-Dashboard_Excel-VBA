@@ -28,10 +28,9 @@ Spinner controls choose how many top records to show, and VBA macros apply the f
 I rebuilt this from a tutorial and then reviewed the numbers, which exposed these issues:
 - **Same-name employees were merged.** For example, four employees named Ashok Kumar were added together and showed 209% efficiency. Employees are now identified by name plus ID.
 - **Working hours wrapped after 24 hours.** A summed 32:48:15 appeared as 08:48:15. The hours format is now `[h]:mm:ss`.
-- **Spinner macros pointed to the wrong cells** after a title row was added, so the Top N filter failed. They now read the correct cells.
+- **Spinner macros read the wrong cells** (C1 and C2 instead of C2 and C3), so the Top N filter failed. They now read the correct cells.
 - **A broken link to an external workbook** was removed.
-- **Two `#VALUE!` errors** in the Summary sheet (employees with a zero or blank efficiency value) are now handled with `IFERROR`.
-
+  
 ## Key results (149 employees)
 - Highest working hours: Anjali Deoram (1008519), 9:16:31
 - Highest Active With Customer %: Anita Dixit (1008517), Deepak Kumar (1008537) and Kavita Sharma (1008556), about 65%
